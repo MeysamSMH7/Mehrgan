@@ -1,7 +1,9 @@
 package com.mehrgan.Fragment;
 
 import android.animation.Animator;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,6 +18,7 @@ import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -46,6 +49,7 @@ public class fr_Search extends Fragment {
     private TextView txtFrSearch_DateSMulti_End;
     private TextView txtFrSearch_DateSMulti_End2;
     private LinearLayout linearFrSearch_DateSingle;
+    private RelativeLayout relatFrSearch;
     private TextView txtFrSearch_DateSingle;
     private TextView txtFrSearch_Date2Single;
     private ScrollView scrollViewSearch;
@@ -54,6 +58,8 @@ public class fr_Search extends Fragment {
     private RelativeLayout layoutMain;
     private LinearLayout linearSearch;
     private TextView txtFrSearch_NoData;
+    private ImageView imgDoSearch_v4_1;
+    private ImageView imgDoSearch_v4_2;
 
     private String dateMiladi = "";
     private String dateMiladiStart = "";
@@ -86,10 +92,9 @@ public class fr_Search extends Fragment {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (scrollViewSearch.getVisibility() == View.VISIBLE) {
-
+                if (scrollViewSearch.getVisibility() == View.VISIBLE)
                     doSearch();
-                } else {
+                else {
                     scrollViewSearch.setVisibility(View.VISIBLE);
                     linearSearch.setVisibility(View.GONE);
                     circularRevealActivity(scrollViewSearch);
@@ -97,6 +102,30 @@ public class fr_Search extends Fragment {
             }
         });
 
+        imgDoSearch_v4_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (scrollViewSearch.getVisibility() == View.VISIBLE)
+                    doSearch();
+                else {
+                    scrollViewSearch.setVisibility(View.VISIBLE);
+                    linearSearch.setVisibility(View.GONE);
+                    circularRevealActivity(scrollViewSearch);
+                }
+            }
+        });
+        imgDoSearch_v4_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (scrollViewSearch.getVisibility() == View.VISIBLE)
+                    doSearch();
+                else {
+                    scrollViewSearch.setVisibility(View.VISIBLE);
+                    linearSearch.setVisibility(View.GONE);
+                    circularRevealActivity(scrollViewSearch);
+                }
+            }
+        });
 
         radioGroupFrSearch.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -129,15 +158,16 @@ public class fr_Search extends Fragment {
     }
 
     private void doSearch() {
-        if (edtFrSearch_Phone.getText().toString().length() != 11 && !edtFrSearch_Phone.getText().toString().equals("")) {
-            new ShowMessage(getContext()).ShowMessage_SnackBar(layoutMain, "فیلد شماره تلفن باید 11 رقم باشد");
-            return;
-        }
 
         if (TextUtils.isEmpty(edtFrSearch_PK.getText()) && TextUtils.isEmpty(edtFrSearch_FullName.getText()) &&
                 TextUtils.isEmpty(edtFrSearch_Phone.getText()) && dateMiladi.equals("") &&
-                dateMiladiStart.equals("") && dateMiladiEnd.equals("")) {
+                dateMiladiStart.equals("") && dateMiladiEnd.equals("") && dateMiladiStart.equals("") && !dateMiladiEnd.equals("")) {
             new ShowMessage(getContext()).ShowMessage_SnackBar(layoutMain, "لطفا یک فیلد را پر کنید");
+            return;
+        }
+
+        if (edtFrSearch_Phone.getText().toString().length() != 11 && !edtFrSearch_Phone.getText().toString().equals("")) {
+            new ShowMessage(getContext()).ShowMessage_SnackBar(layoutMain, "فیلد شماره تلفن باید 11 رقم باشد");
             return;
         }
 
@@ -157,6 +187,11 @@ public class fr_Search extends Fragment {
         }
         if (!dateMiladiStart.equals("") && !dateMiladiEnd.equals("")) {
             arrayList.add(tb_BillsStructure.coldateMiladi + " BETWEEN '" + dateMiladiStart + "' AND '" + dateMiladiEnd + "'");
+        }
+
+        if (arrayList.size() == 0) {
+            new ShowMessage(getContext()).ShowMessage_SnackBar(layoutMain, "لطفا یک فیلد را پر کنید");
+            return;
         }
 
         list = new tb_BillsDataSource(getContext()).Search(arrayList);
@@ -280,12 +315,23 @@ public class fr_Search extends Fragment {
         layoutMain = view.findViewById(R.id.layoutMain);
         linearSearch = view.findViewById(R.id.linearSearch);
         txtFrSearch_NoData = view.findViewById(R.id.txtFrSearch_NoData);
+        relatFrSearch = view.findViewById(R.id.relatFrSearch);
+        imgDoSearch_v4_1 = view.findViewById(R.id.imgDoSearch_v4_1);
+        imgDoSearch_v4_2 = view.findViewById(R.id.imgDoSearch_v4_2);
 
         scrollViewSearch.setVisibility(View.VISIBLE);
         linearSearch.setVisibility(View.GONE);
 
         linearFrSearch_DateMulti.setVisibility(View.VISIBLE);
         linearFrSearch_DateSingle.setVisibility(View.GONE);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            relatFrSearch.setVisibility(View.GONE);
+            btnSearch.setVisibility(View.VISIBLE);
+        } else {
+            relatFrSearch.setVisibility(View.VISIBLE);
+            btnSearch.setVisibility(View.GONE);
+        }
 
         list = new ArrayList<>();
     }
@@ -296,19 +342,19 @@ public class fr_Search extends Fragment {
 
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void circularRevealActivity(View view) {
 
-        int cx = view.getRight();
-        int cy = view.getBottom();
-
-        float finalRadius = Math.max(view.getWidth(), view.getHeight());
-
-        Animator circularReveal = ViewAnimationUtils.createCircularReveal(view, cx, cy, 0, finalRadius);
-        circularReveal.setDuration(500);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            int cx = view.getRight();
+            int cy = view.getBottom();
+            float finalRadius = Math.max(view.getWidth(), view.getHeight());
+            Animator circularReveal = null;
+            circularReveal = ViewAnimationUtils.createCircularReveal(view, cx, cy, 0, finalRadius);
+            circularReveal.setDuration(500);
+            circularReveal.start();
+        }
 
         view.setVisibility(View.VISIBLE);
-        circularReveal.start();
     }
 
 }

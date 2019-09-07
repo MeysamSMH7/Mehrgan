@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.mehrgan.R;
 
-
 public class ShowMessage {
 
     private Context context;
@@ -16,7 +15,6 @@ public class ShowMessage {
     public ShowMessage(Context context) {
         this.context = context;
     }
-
 
     public void ShowMessage_SnackBar(Object layout, String text) {
 
@@ -32,7 +30,5 @@ public class ShowMessage {
         sb.setBackgroundColor(context.getResources().getColor(R.color.colorLogo));
         snackbar.show();
     }
-
-
 
 }

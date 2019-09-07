@@ -2,6 +2,7 @@ package com.mehrgan;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -165,28 +166,28 @@ public class Activity_Main_Mehrgan extends AppCompatActivity {
         sqLiteToExcel.exportSingleTable(tb_BillsStructure.tableName, "merhrgan.xls", new SQLiteToExcel.ExportListener() {
             @Override
             public void onStart() {
-                new ShowMessage(context).ShowMessage_SnackBar(layoutMain,"درحال اجرا");
+                new ShowMessage(context).ShowMessage_SnackBar(layoutMain, "درحال اجرا");
             }
 
             @Override
             public void onCompleted(String filePath) {
-                new ShowMessage(context).ShowMessage_SnackBar(layoutMain,"فایل شما با موفقیت ذخیره شد\n" + filePath);
+                new ShowMessage(context).ShowMessage_SnackBar(layoutMain, "فایل شما با موفقیت ذخیره شد\n" + filePath);
             }
 
             @Override
             public void onError(Exception e) {
-                new ShowMessage(context).ShowMessage_SnackBar(layoutMain,"اضافه کردن فایل با شکست روبه رو شد!");
+                new ShowMessage(context).ShowMessage_SnackBar(layoutMain, "اضافه کردن فایل با شکست روبه رو شد!");
                 e.printStackTrace();
             }
         });
     }
 
     private void importExToDB() {
-        ExcelToSQLite excelToSQLite = new ExcelToSQLite(context, DatabaseManagement.databaseName , false);
+        ExcelToSQLite excelToSQLite = new ExcelToSQLite(context, DatabaseManagement.databaseName, false);
         excelToSQLite.importFromFile(Environment.getExternalStorageDirectory().toString() + "/merhrgan.xls", new ExcelToSQLite.ImportListener() {
             @Override
             public void onStart() {
-                new ShowMessage(context).ShowMessage_SnackBar(layoutMain,"درحال اجرا");
+                new ShowMessage(context).ShowMessage_SnackBar(layoutMain, "درحال اجرا");
             }
 
             @Override
@@ -195,12 +196,16 @@ public class Activity_Main_Mehrgan extends AppCompatActivity {
                 tb_billsDataSource.Open();
                 tb_billsDataSource.IraniToGery();
                 tb_billsDataSource.Close();
-                new ShowMessage(context).ShowMessage_SnackBar(layoutMain,"فایل شما با موفقیت اضافه شد");
+                new ShowMessage(context).ShowMessage_SnackBar(layoutMain, "فایل شما با موفقیت اضافه شد");
+                SharedPreferences sharedPreferences = getSharedPreferences("Mehrgan", 0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("onRefresh", true);
+                editor.commit();
             }
 
             @Override
             public void onError(Exception e) {
-                new ShowMessage(context).ShowMessage_SnackBar(layoutMain,"اضافه کردن فایل با مشکل مواجه شد");
+                new ShowMessage(context).ShowMessage_SnackBar(layoutMain, "اضافه کردن فایل با مشکل مواجه شد");
             }
         });
     }
