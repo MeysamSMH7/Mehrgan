@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutMain"
+    android:layout_width="match_parent"
+    android:layoutDirection="ltr"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="7dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.987"
+        app:srcCompat="@drawable/icon_search" />
+
+    <LinearLayout
+        android:id="@+id/linearSearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclFr_Search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+        <TextView
+            android:id="@+id/txtFrSearch_NoData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="موردی یافت نشد!!!"
+            android:textColor="@color/colorLogo" />
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewSearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_white_corner_"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:text="شماره قبض"
+                    android:textColor="@color/colorLogo" />
+
+                <EditText
+                    android:id="@+id/edtFrSearch_PK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPurple7"
+                    android:gravity="left|center"
+                    android:inputType="number"
+                    android:paddingEnd="7dp"
+                    android:textColor="@color/colorPurple7"
+                    android:textCursorDrawable="@color/colorPurple7"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_white_corner_"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:text="نام  و نام خانوادگی"
+                    android:textColor="@color/colorLogo" />
+
+                <EditText
+                    android:id="@+id/edtFrSearch_FullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPurple7"
+                    android:gravity="right"
+                    android:paddingEnd="7dp"
+                    android:textColor="@color/colorPurple7"
+                    android:textCursorDrawable="@color/colorPurple7"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_white_corner_"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:text="شماره تلفن"
+                    android:textColor="@color/colorLogo" />
+
+                <EditText
+                    android:id="@+id/edtFrSearch_Phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPurple7"
+                    android:gravity="left|center"
+                    android:inputType="number"
+                    android:paddingEnd="7dp"
+                    android:textColor="@color/colorPurple7"
+                    android:textCursorDrawable="@color/colorPurple7"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_white_corner_"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:text="انتخاب تاریخ"
+                    android:textColor="@color/colorLogo" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioGroupFrSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="7dp"
+                    android:layoutDirection="rtl">
+
+                    <RadioButton
+                        android:id="@+id/radioFrSearch_DateMulti"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:gravity="right|center"
+                        android:text="بازه زمانی"
+                        android:textColor="@color/colorLogo" />
+
+                    <RadioButton
+                        android:id="@+id/radioFrSearch_DateSingle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right|center"
+                        android:text="تاریخ دقیق"
+                        android:textColor="@color/colorLogo" />
+
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/linearFrSearch_DateMulti"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/bg_white_corner_"
+                    android:orientation="vertical"
+                    android:padding="7dp">
+
+
+                    <TextView
+                        android:id="@+id/txtFrSearch_DateSMulti_Start"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="right|center"
+                        android:text="تاریخ شروع"
+                        android:textColor="@color/colorLogo" />
+
+                    <TextView
+                        android:id="@+id/txtFrSearch_DateSMulti_Start2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_weight="0.5"
+                        android:gravity="left|center"
+                        android:paddingLeft="7dp"
+                        android:textColor="@color/colorLogo" />
+
+
+                    <TextView
+                        android:id="@+id/txtFrSearch_DateSMulti_End"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="right|center"
+                        android:text="تاریخ پایان"
+                        android:textColor="@color/colorLogo" />
+
+                    <TextView
+                        android:id="@+id/txtFrSearch_DateSMulti_End2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_weight="0.5"
+                        android:gravity="left|center"
+                        android:paddingLeft="7dp"
+                        android:textColor="@color/colorLogo" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearFrSearch_DateSingle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/bg_white_corner_"
+                    android:orientation="vertical"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:id="@+id/txtFrSearch_DateSingle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="right|center"
+                        android:text="انتخاب تاریخ"
+                        android:textColor="@color/colorLogo" />
+
+                    <TextView
+                        android:id="@+id/txtFrSearch_Date2Single"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_weight="0.5"
+                        android:gravity="left|center"
+                        android:paddingLeft="7dp"
+                        android:textColor="@color/colorLogo" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

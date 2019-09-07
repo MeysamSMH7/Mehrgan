@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMain"
+    android:configChanges="keyboardHidden"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Activity_Details_Mehrgan"
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
+
+    <include layout="@layout/appbar_mehrgan"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_white_corner_"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:text="شماره قبض"
+                    android:textColor="@color/colorLogo" />
+
+                <EditText
+                    android:id="@+id/edtAcDe_PK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPurple7"
+                    android:gravity="left|center"
+                    android:inputType="number"
+                    android:paddingEnd="7dp"
+                    android:textColor="@color/colorPurple7"
+                    android:textCursorDrawable="@color/colorPurple7"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_white_corner_"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:text="نام  و نام خانوادگی"
+                    android:textColor="@color/colorLogo" />
+
+                <EditText
+                    android:id="@+id/edtAcDe_FullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPurple7"
+                    android:gravity="right"
+                    android:paddingEnd="7dp"
+                    android:textColor="@color/colorPurple7"
+                    android:textCursorDrawable="@color/colorPurple7"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_white_corner_"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:text="شماره تلفن"
+                    android:textColor="@color/colorLogo" />
+
+                <EditText
+                    android:id="@+id/edtAcDe_Phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPurple7"
+                    android:gravity="left|center"
+                    android:inputType="number"
+                    android:paddingEnd="7dp"
+                    android:textColor="@color/colorPurple7"
+                    android:textCursorDrawable="@color/colorPurple7"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_white_corner_"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:text="نام دکتر"
+                    android:textColor="@color/colorLogo" />
+
+                <EditText
+                    android:id="@+id/edtAcDe_DocName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPurple7"
+                    android:gravity="right"
+                    android:maxLines="2"
+                    android:paddingEnd="7dp"
+                    android:textColor="@color/colorPurple7"
+                    android:textCursorDrawable="@color/colorPurple7"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearAcDe_Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_white_corner_"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:id="@+id/txtAcDe_Date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:text="تاریخ انتخاب شده:"
+                    android:textColor="@color/colorLogo" />
+
+                <TextView
+                    android:id="@+id/txtAcDe_Date2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center"
+                    android:paddingLeft="7dp"
+                    android:text=""
+                    android:textColor="@color/colorPurple7" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_white_corner_"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center"
+                    android:text="نمره ی چشم"
+                    android:textColor="@color/colorLogo" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:orientation="horizontal"
+                    android:padding="7dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="right|center"
+                            android:text="چشم راست"
+                            android:textColor="@color/colorLogo" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="نزدیک بین"
+                            android:textColorHint="@color/colorPurple7"
+                            app:backgroundTint="@color/colorPurple7">
+
+                            <EditText
+                                android:id="@+id/edtAcDe_RightNazdik"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/colorPurple7"
+                                android:gravity="right"
+                                android:maxLines="2"
+                                android:paddingEnd="7dp"
+                                android:textColor="@color/colorPurple7"
+                                android:textCursorDrawable="@color/colorPurple7"
+                                android:textSize="15sp" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="دوربین"
+                            android:textColorHint="@color/colorPurple7"
+                            app:backgroundTint="@color/colorPurple7">
+
+                            <EditText
+                                android:id="@+id/edtAcDe_RightDor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/colorPurple7"
+                                android:maxLines="2"
+                                android:gravity="right"
+                                android:paddingEnd="7dp"
+                                android:textColor="@color/colorPurple7"
+                                android:textCursorDrawable="@color/colorPurple7"
+                                android:textSize="15sp" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:orientation="horizontal"
+                    android:padding="7dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="right|center"
+                            android:text="چشم چپ"
+                            android:textColor="@color/colorLogo" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="نزدیک بین"
+                            android:textColorHint="@color/colorPurple7"
+                            app:backgroundTint="@color/colorPurple7">
+
+                            <EditText
+                                android:id="@+id/edtAcDe_LeftNazdik"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/colorPurple7"
+                                android:maxLines="2"
+                                android:gravity="right"
+                                android:paddingEnd="7dp"
+                                android:textColor="@color/colorPurple7"
+                                android:textCursorDrawable="@color/colorPurple7"
+                                android:textSize="15sp" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="دوربین"
+                            android:textColorHint="@color/colorPurple7"
+                            app:backgroundTint="@color/colorPurple7">
+
+                            <EditText
+                                android:id="@+id/edtAcDe_LeftDoor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/colorPurple7"
+                                android:maxLines="2"
+                                android:paddingEnd="7dp"
+                                android:gravity="right"
+                                android:textColor="@color/colorPurple7"
+                                android:textCursorDrawable="@color/colorPurple7"
+                                android:textSize="15sp" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_white_corner_"
+                android:orientation="vertical"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:text="توضیح اضافه"
+                    android:textColor="@color/colorLogo" />
+
+                <EditText
+                    android:id="@+id/edtAcDe_Dec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPurple7"
+                    android:gravity="right"
+                    android:maxLines="2"
+                    android:paddingEnd="7dp"
+                    android:textColor="@color/colorPurple7"
+                    android:textCursorDrawable="@color/colorPurple7"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearAcDe_Add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:visibility="gone"
+                android:background="@drawable/selector_button_ds">
+
+                <Button
+                    android:id="@+id/btnAcDe_Add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="               ویرایش               "
+                    android:theme="@style/selectorButton" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

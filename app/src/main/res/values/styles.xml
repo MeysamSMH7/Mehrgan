@@ -1,0 +1,41 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorLogo</item>
+        <item name="colorPrimaryDark">@color/colorLogo</item>
+        <item name="colorAccent">@color/colorLogo</item>
+        <item name="android:typeface">serif</item>
+        <item name="colorControlActivated">@color/colorPurple7</item>
+        <item name="android:colorForeground">@color/colorPurple7</item>
+        <item name="colorControlNormal">@color/colorPurple7</item>
+        <item name="android:textColorSecondary">@color/colorPurple7</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="selectorButton" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Borderless.Colored</item>
+        <item name="colorControlHighlight">@color/colorLogo</item>
+    </style>
+
+
+
+    <style name="DialogAnimation_2">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="menuStyle">
+        <item name="android:layoutDirection">rtl</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/colorLogo</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+
+</resources>

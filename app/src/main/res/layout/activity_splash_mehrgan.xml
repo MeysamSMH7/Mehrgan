@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    tools:context=".Activity_Splash_Mehrgan">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImage"
+        android:layout_marginBottom="-30dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:padding="20dp" />
+
+    <TextView
+        android:id="@+id/txtAcs_DDL"
+        android:layout_width="match_parent"
+        android:textColor="@color/colorLogo"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gifImage"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="7dp"
+        android:gravity="center"
+        android:text="عینک مهرگان"/>
+
+    <ProgressBar
+        android:id="@+id/progressAcS"
+        style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="true" />
+
+
+</RelativeLayout>
