@@ -5,13 +5,17 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.mehrgan.Adapter.ViewPagerAdapter;
@@ -60,6 +64,27 @@ public class fr_Add extends Fragment {
     }
 
     private void clicks() {
+
+        edtFrAdd_PK.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (charSequence.toString().equals("0")) {
+                    new ShowMessage(getContext()).ShowMessage_SnackBar(layoutMain, "شماره قبض نمیتواند با صفر شروع شود");
+                    edtFrAdd_PK.setText("");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
         linearFrAdd_Date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,7 +114,7 @@ public class fr_Add extends Fragment {
                     return;
                 }
 
-                if (edtFrAdd_Phone.getText().toString().length() != 11){
+                if (edtFrAdd_Phone.getText().toString().length() != 11) {
                     new ShowMessage(getContext()).ShowMessage_SnackBar(layoutMain, "فیلد شماره تلفن باید 11 رقم باشد");
                     return;
                 }
@@ -113,7 +138,7 @@ public class fr_Add extends Fragment {
         edtFrAdd_LeftDoor.setText("");
         edtFrAdd_LeftNazdik.setText("");
         edtFrAdd_Dec.setText("");
-        txtFrAdd_Date.setText("انتخاب تاریخ");
+        txtFrAdd_Date.setText("انتخاب تاریخ *");
         txtFrAdd_Date2.setText("");
         dateJalali = "";
         dateMiladi = "";
