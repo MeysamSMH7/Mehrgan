@@ -195,7 +195,7 @@ public class Activity_Main_Mehrgan extends AppCompatActivity {
                 tb_billsDataSource.Open();
                 tb_billsDataSource.IraniToGery();
                 tb_billsDataSource.Close();
-                new ShowMessage(context).ShowMessage_SnackBar(layoutMain,"فایل مشا با موفقیت اضافه شد");
+                new ShowMessage(context).ShowMessage_SnackBar(layoutMain,"فایل شما با موفقیت اضافه شد");
             }
 
             @Override
