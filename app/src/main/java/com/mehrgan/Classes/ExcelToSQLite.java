@@ -180,7 +180,7 @@ public class ExcelToSQLite {
             while (rit.hasNext()) {
                 Row row = rit.next();
                 ContentValues values = new ContentValues();
-                int numOfCells = row.getPhysicalNumberOfCells();
+                //int numOfCells = row.getPhysicalNumberOfCells();
                 for (int n = 0; n < columns.size(); n++) {
                     if (row.getCell(n) == null) {
                         values.put(columns.get(n), "");
