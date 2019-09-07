@@ -187,8 +187,8 @@ public class ExcelToSQLite {
                         values.put(columns.get(n), row.getCell(n).getStringCellValue());
                     }
                 }
-                long result = database.insertWithOnConflict(sheet.getSheetName(),
-                        null, values, SQLiteDatabase.CONFLICT_IGNORE);
+                long result = database.replaceOrThrow(sheet.getSheetName(),
+                        null, values);
                 if (result < 0) {
                     throw new RuntimeException("وارد کردن با مشکل روبه رو شد!");
                 }
