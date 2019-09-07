@@ -200,7 +200,6 @@ public class Activity_Main_Mehrgan extends AppCompatActivity {
 
             @Override
             public void onError(Exception e) {
-                Toast.makeText(context, e+"", Toast.LENGTH_SHORT).show();
                 new ShowMessage(context).ShowMessage_SnackBar(layoutMain,"اضافه کردن فایل با مشکل مواجه شد");
             }
         });
