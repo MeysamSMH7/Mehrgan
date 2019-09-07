@@ -182,7 +182,7 @@ public class Activity_Main_Mehrgan extends AppCompatActivity {
     }
 
     private void importExToDB() {
-        ExcelToSQLite excelToSQLite = new ExcelToSQLite(context, DatabaseManagement.databaseName , false);
+        ExcelToSQLite excelToSQLite = new ExcelToSQLite(context, DatabaseManagement.databaseName , true);
         excelToSQLite.importFromFile(Environment.getExternalStorageDirectory().toString() + "/merhrgan.xls", new ExcelToSQLite.ImportListener() {
             @Override
             public void onStart() {
