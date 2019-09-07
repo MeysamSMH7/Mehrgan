@@ -113,7 +113,7 @@ public class fr_Add extends Fragment {
         edtFrAdd_LeftDoor.setText("");
         edtFrAdd_LeftNazdik.setText("");
         edtFrAdd_Dec.setText("");
-        txtFrAdd_Date.setText("انتخاب تاریخ");
+        txtFrAdd_Date.setText("انتخاب تاریخ *");
         txtFrAdd_Date2.setText("");
         dateJalali = "";
         dateMiladi = "";
