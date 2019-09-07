@@ -127,7 +127,7 @@ public class ExcelToSQLite {
     }
 
     private void working(InputStream stream) throws Exception {
-        HSSFWorkbook workbook = new HSSFWorkbook(stream);
+        HSSFWorkbook workbook = new HSSFWorkbook(stream, true);
         int sheetNumber = workbook.getNumberOfSheets();
         for (int i = 0; i < sheetNumber; i++) {
             createTable(workbook.getSheetAt(i));
@@ -155,7 +155,7 @@ public class ExcelToSQLite {
             }
             createTableSql.append(")");
 
-            if (dropTable){
+            if (dropTable) {
                 //database.execSQL("DROP TABLE IF EXISTS " + sheet.getSheetName());
                 tb_BillsDataSource tb_billsDataSource = new tb_BillsDataSource(mContext);
                 tb_billsDataSource.Open();
@@ -180,8 +180,11 @@ public class ExcelToSQLite {
             while (rit.hasNext()) {
                 Row row = rit.next();
                 ContentValues values = new ContentValues();
-                for (int n = 0; n < row.getPhysicalNumberOfCells(); n++) {
-                    if (row.getCell(n).getCellTypeEnum() == CellType.NUMERIC) {
+                int numOfCells = row.getPhysicalNumberOfCells();
+                for (int n = 0; n < columns.size(); n++) {
+                    if (row.getCell(n) == null) {
+                        values.put(columns.get(n), "");
+                    } else if (row.getCell(n).getCellTypeEnum() == CellType.NUMERIC) {
                         values.put(columns.get(n), row.getCell(n).getNumericCellValue());
                     } else {
                         values.put(columns.get(n), row.getCell(n).getStringCellValue());
