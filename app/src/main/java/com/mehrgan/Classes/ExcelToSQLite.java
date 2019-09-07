@@ -190,7 +190,7 @@ public class ExcelToSQLite {
                         values.put(columns.get(n), row.getCell(n).getStringCellValue());
                     }
                 }
-                long result = database.replaceOrThrow(sheet.getSheetName(),
+                long result = database.insert(sheet.getSheetName(),
                         null, values);
                 if (result < 0) {
                     throw new RuntimeException("وارد کردن با مشکل روبه رو شد!");
