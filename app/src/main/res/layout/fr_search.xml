@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layoutMain"
     android:layout_width="match_parent"
-    android:layoutDirection="ltr"
     android:layout_height="match_parent"
+    android:layoutDirection="ltr"
     android:orientation="vertical">
 
     <android.support.design.widget.FloatingActionButton
@@ -12,9 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="7dp"
         android:clickable="true"
+        android:visibility="gone"
         android:focusable="true"
         app:backgroundTint="@color/colorPrimary"
         app:fabSize="normal"
@@ -23,6 +25,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.987"
         app:srcCompat="@drawable/icon_search" />
+
 
     <LinearLayout
         android:id="@+id/linearSearch"
@@ -82,7 +85,7 @@
                     android:backgroundTint="@color/colorPurple7"
                     android:gravity="left|center"
                     android:inputType="number"
-                    android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -111,7 +114,7 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorPurple7"
                     android:gravity="right"
-                    android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -141,7 +144,7 @@
                     android:backgroundTint="@color/colorPurple7"
                     android:gravity="left|center"
                     android:inputType="number"
-                    android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -281,8 +284,34 @@
 
             </LinearLayout>
 
+
+
         </LinearLayout>
 
     </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relatFrSearch"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp">
+
+        <ImageView
+            android:id="@+id/imgDoSearch_v4_1"
+            android:src="@drawable/circle"
+            android:layout_width="55dp"
+            android:layout_height="55dp" />
+
+        <ImageView
+            android:id="@+id/imgDoSearch_v4_2"
+            android:padding="13dp"
+            android:src="@drawable/icon_search"
+            android:layout_width="55dp"
+            android:layout_height="55dp" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
