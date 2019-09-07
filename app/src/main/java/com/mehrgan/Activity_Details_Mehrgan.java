@@ -131,6 +131,11 @@ public class Activity_Details_Mehrgan extends AppCompatActivity {
         layoutMain.setEnabled(set);
         txtAcDe_Date.setEnabled(set);
         txtAcDe_Date2.setEnabled(set);
+        if (set)
+            btnAcDe_Add.setVisibility(View.VISIBLE);
+        else
+            btnAcDe_Add.setVisibility(View.GONE);
+
     }
 
     private void setDefault(String pk) {
