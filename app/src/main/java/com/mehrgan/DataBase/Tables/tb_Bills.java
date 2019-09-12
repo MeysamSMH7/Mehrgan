@@ -5,10 +5,13 @@ public class tb_Bills {
     public String fullName;
     public String phoneNum;
     public String docName;
-    public String rightDoor;
-    public String rightNazdik;
-    public String leftDoor;
-    public String leftNazdik;
+    public String dorOD;
+    public String dorOS;
+    public String dorPD;
+    public String dorAdd;
+    public String nazOD;
+    public String nazOS;
+    public String nazPD;
     public String description;
     public String dateMiladi;
     public String dateJalali;

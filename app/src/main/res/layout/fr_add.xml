@@ -41,6 +41,7 @@
                     android:gravity="left|center"
                     android:inputType="number"
                     android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -70,6 +71,7 @@
                     android:backgroundTint="@color/colorPurple7"
                     android:gravity="right"
                     android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -100,6 +102,7 @@
                     android:gravity="left|center"
                     android:inputType="number"
                     android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -130,6 +133,7 @@
                     android:gravity="right"
                     android:maxLines="2"
                     android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -203,25 +207,26 @@
                             android:layout_height="0dp"
                             android:layout_weight="0.5"
                             android:gravity="right|center"
-                            android:text="چشم راست"
+                            android:text="دید دور"
                             android:textColor="@color/colorLogo" />
 
 
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="نزدیک بین"
+                            android:gravity="left"
+                            android:hint="OD"
                             android:textColorHint="@color/colorPurple7"
                             app:backgroundTint="@color/colorPurple7">
 
                             <EditText
-                                android:id="@+id/edtFrAdd_RightNazdik"
+                                android:id="@+id/edtFrAdd_DorOD"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/colorPurple7"
-                                android:gravity="right"
-                                android:maxLines="2"
+                                android:gravity="left"
                                 android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
                                 android:textColor="@color/colorPurple7"
                                 android:textCursorDrawable="@color/colorPurple7"
                                 android:textSize="15sp" />
@@ -231,18 +236,62 @@
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="دوربین"
+                            android:hint="OS"
+                            android:gravity="left"
                             android:textColorHint="@color/colorPurple7"
                             app:backgroundTint="@color/colorPurple7">
 
                             <EditText
-                                android:id="@+id/edtFrAdd_RightDor"
+                                android:id="@+id/edtFrAdd_DorOS"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/colorPurple7"
-                                android:gravity="right"
-                                android:maxLines="2"
+                                android:gravity="left"
                                 android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
+                                android:textColor="@color/colorPurple7"
+                                android:textCursorDrawable="@color/colorPurple7"
+                                android:textSize="15sp" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="PD"
+                            android:gravity="left"
+                            android:textColorHint="@color/colorPurple7"
+                            app:backgroundTint="@color/colorPurple7">
+
+                            <EditText
+                                android:id="@+id/edtFrAdd_DorPD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/colorPurple7"
+                                android:gravity="left"
+                                android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
+                                android:textColor="@color/colorPurple7"
+                                android:textCursorDrawable="@color/colorPurple7"
+                                android:textSize="15sp" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Add"
+                            android:textColorHint="@color/colorPurple7"
+                            app:backgroundTint="@color/colorPurple7">
+
+                            <EditText
+                                android:id="@+id/edtFrAdd_DorAdd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/colorPurple7"
+                                android:gravity="left"
+                                android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
                                 android:textColor="@color/colorPurple7"
                                 android:textCursorDrawable="@color/colorPurple7"
                                 android:textSize="15sp" />
@@ -274,24 +323,26 @@
                             android:layout_height="0dp"
                             android:layout_weight="0.5"
                             android:gravity="right|center"
-                            android:text="چشم چپ"
+                            android:text="نزدیک"
                             android:textColor="@color/colorLogo" />
 
+
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="نزدیک بین"
+                            android:hint="OD"
+                            android:gravity="left"
                             android:textColorHint="@color/colorPurple7"
                             app:backgroundTint="@color/colorPurple7">
 
                             <EditText
-                                android:id="@+id/edtFrAdd_LeftNazdik"
+                                android:id="@+id/edtFrAdd_NazOD"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/colorPurple7"
-                                android:gravity="right"
-                                android:maxLines="2"
+                                android:gravity="left"
                                 android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
                                 android:textColor="@color/colorPurple7"
                                 android:textCursorDrawable="@color/colorPurple7"
                                 android:textSize="15sp" />
@@ -301,24 +352,46 @@
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="دوربین"
+                            android:hint="OS"
+                            android:gravity="left"
                             android:textColorHint="@color/colorPurple7"
                             app:backgroundTint="@color/colorPurple7">
 
                             <EditText
-                                android:id="@+id/edtFrAdd_LeftDoor"
+                                android:id="@+id/edtFrAdd_NazOS"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/colorPurple7"
-                                android:gravity="right"
-                                android:maxLines="2"
+                                android:gravity="left"
                                 android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
                                 android:textColor="@color/colorPurple7"
                                 android:textCursorDrawable="@color/colorPurple7"
                                 android:textSize="15sp" />
 
                         </android.support.design.widget.TextInputLayout>
 
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="PD"
+                            android:gravity="left"
+                            android:textColorHint="@color/colorPurple7"
+                            app:backgroundTint="@color/colorPurple7">
+
+                            <EditText
+                                android:id="@+id/edtFrAdd_NazPD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/colorPurple7"
+                                android:gravity="left"
+                                android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
+                                android:textColor="@color/colorPurple7"
+                                android:textCursorDrawable="@color/colorPurple7"
+                                android:textSize="15sp" />
+
+                        </android.support.design.widget.TextInputLayout>
 
 
                     </LinearLayout>
@@ -353,6 +426,7 @@
                     android:gravity="right"
                     android:maxLines="2"
                     android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />

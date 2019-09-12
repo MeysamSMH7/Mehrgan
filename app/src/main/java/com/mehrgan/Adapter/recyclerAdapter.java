@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mehrgan.Activity_Details_Mehrgan;
+import com.mehrgan.Classes.CalendarTool;
 import com.mehrgan.DataBase.DataSource.tb_BillsDataSource;
 import com.mehrgan.DataBase.Tables.tb_Bills;
 import com.mehrgan.R;
@@ -59,12 +60,19 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
         holder.txtPhoneNum.setText(data.get(position).phoneNum);
         holder.txtDate.setText(data.get(position).dateJalali);
 
+        if (data.get(position).dateJalali.split("/").length == 3) {
+            CalendarTool tool = new CalendarTool();
+            tool.setIranianDate(data.get(position).dateJalali);
+            holder.txtNameDate.setText(tool.getIranianWeekDayStr());
+        } else
+            holder.txtNameDate.setVisibility(View.GONE);
+
         holder.linearMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context , Activity_Details_Mehrgan.class);
-                intent.putExtra("status" , "show");
-                intent.putExtra("PK" ,data.get(position).PK_Bill);
+                Intent intent = new Intent(context, Activity_Details_Mehrgan.class);
+                intent.putExtra("status", "show");
+                intent.putExtra("PK", data.get(position).PK_Bill);
                 context.startActivity(intent);
             }
         });
@@ -79,11 +87,11 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
 
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()){
+                        switch (item.getItemId()) {
                             case R.id.nvgEdit:
-                                Intent intent = new Intent(context , Activity_Details_Mehrgan.class);
-                                intent.putExtra("status" , "edit");
-                                intent.putExtra("PK" , data.get(position).PK_Bill);
+                                Intent intent = new Intent(context, Activity_Details_Mehrgan.class);
+                                intent.putExtra("status", "edit");
+                                intent.putExtra("PK", data.get(position).PK_Bill);
                                 context.startActivity(intent);
                                 break;
                             case R.id.nvgDelete:
@@ -106,7 +114,7 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
         return data.size();
     }
 
-    private void deleteItem(final String id){
+    private void deleteItem(final String id) {
         new AlertDialog.Builder(context)
                 .setTitle("حذف این قبض")
                 .setMessage("آیا مطمئن هستید؟")
@@ -134,7 +142,7 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtBillNum, txtFullName, txtPhoneNum, txtDate;
+        TextView txtBillNum, txtFullName, txtPhoneNum, txtDate, txtNameDate;
         ImageButton btnMenuItem;
         LinearLayout linearMain;
 
@@ -147,6 +155,7 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.ViewHo
             txtDate = view.findViewById(R.id.txtDate);
             btnMenuItem = view.findViewById(R.id.btnMenuItem);
             linearMain = view.findViewById(R.id.linearMain);
+            txtNameDate = view.findViewById(R.id.txtNameDate);
         }
     }
 }

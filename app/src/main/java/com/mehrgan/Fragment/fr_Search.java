@@ -174,19 +174,19 @@ public class fr_Search extends Fragment {
         ArrayList arrayList = new ArrayList();
 
         if (!(TextUtils.isEmpty(edtFrSearch_PK.getText()))) {
-            arrayList.add(tb_BillsStructure.colPK_Bill + " = '" + edtFrSearch_PK.getText().toString() + "'");
+            arrayList.add(tb_BillsStructure.PK_Bill + " = '" + edtFrSearch_PK.getText().toString() + "'");
         }
         if (!(TextUtils.isEmpty(edtFrSearch_FullName.getText()))) {
-            arrayList.add(tb_BillsStructure.colfullName + " LIKE '%" + edtFrSearch_FullName.getText().toString() + "%'");
+            arrayList.add(tb_BillsStructure.fullName + " LIKE '%" + edtFrSearch_FullName.getText().toString() + "%'");
         }
         if (!(TextUtils.isEmpty(edtFrSearch_Phone.getText()))) {
-            arrayList.add(tb_BillsStructure.colphoneNum + " = '" + edtFrSearch_Phone.getText().toString() + "'");
+            arrayList.add(tb_BillsStructure.phoneNum + " = '" + edtFrSearch_Phone.getText().toString() + "'");
         }
         if (!dateMiladi.equals("")) {
-            arrayList.add(tb_BillsStructure.coldateMiladi + " = '" + dateMiladi + "'");
+            arrayList.add(tb_BillsStructure.dateMiladi + " = '" + dateMiladi + "'");
         }
         if (!dateMiladiStart.equals("") && !dateMiladiEnd.equals("")) {
-            arrayList.add(tb_BillsStructure.coldateMiladi + " BETWEEN '" + dateMiladiStart + "' AND '" + dateMiladiEnd + "'");
+            arrayList.add(tb_BillsStructure.dateMiladi + " BETWEEN '" + dateMiladiStart + "' AND '" + dateMiladiEnd + "'");
         }
 
         if (arrayList.size() == 0) {

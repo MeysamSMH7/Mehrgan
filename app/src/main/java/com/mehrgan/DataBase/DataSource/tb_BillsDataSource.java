@@ -23,17 +23,20 @@ public class tb_BillsDataSource {
 
     private String[] allColumns = {
 
-            tb_BillsStructure.colPK_Bill,
-            tb_BillsStructure.colfullName,
-            tb_BillsStructure.colphoneNum,
-            tb_BillsStructure.coldocName,
-            tb_BillsStructure.colrightDoor,
-            tb_BillsStructure.colrightNazdik,
-            tb_BillsStructure.colleftDoor,
-            tb_BillsStructure.colleftNazdik,
-            tb_BillsStructure.coldescription,
-            tb_BillsStructure.coldateMiladi,
-            tb_BillsStructure.coldateJalali
+            tb_BillsStructure.PK_Bill,
+            tb_BillsStructure.fullName,
+            tb_BillsStructure.phoneNum,
+            tb_BillsStructure.docName,
+            tb_BillsStructure.dorOD,
+            tb_BillsStructure.dorOS,
+            tb_BillsStructure.dorPD,
+            tb_BillsStructure.dorAdd,
+            tb_BillsStructure.nazOD,
+            tb_BillsStructure.nazOS,
+            tb_BillsStructure.nazPD,
+            tb_BillsStructure.description,
+            tb_BillsStructure.dateMiladi,
+            tb_BillsStructure.dateJalali
 
 
     };
@@ -55,17 +58,20 @@ public class tb_BillsDataSource {
 
         Open();
         ContentValues values = new ContentValues();
-        values.put(tb_BillsStructure.colPK_Bill, data.PK_Bill);
-        values.put(tb_BillsStructure.colfullName, data.fullName);
-        values.put(tb_BillsStructure.colphoneNum, data.phoneNum);
-        values.put(tb_BillsStructure.coldocName, data.docName);
-        values.put(tb_BillsStructure.colrightDoor, data.rightDoor);
-        values.put(tb_BillsStructure.colrightNazdik, data.rightNazdik);
-        values.put(tb_BillsStructure.colleftDoor, data.leftDoor);
-        values.put(tb_BillsStructure.colleftNazdik, data.leftNazdik);
-        values.put(tb_BillsStructure.coldescription, data.description);
-        values.put(tb_BillsStructure.coldateMiladi, data.dateMiladi);
-        values.put(tb_BillsStructure.coldateJalali, data.dateJalali);
+        values.put(tb_BillsStructure.PK_Bill, data.PK_Bill);
+        values.put(tb_BillsStructure.fullName, data.fullName);
+        values.put(tb_BillsStructure.phoneNum, data.phoneNum);
+        values.put(tb_BillsStructure.docName, data.docName);
+        values.put(tb_BillsStructure.dorOD, data.dorOD);
+        values.put(tb_BillsStructure.dorOS, data.dorOS);
+        values.put(tb_BillsStructure.dorPD, data.dorPD);
+        values.put(tb_BillsStructure.dorAdd, data.dorAdd);
+        values.put(tb_BillsStructure.nazOD, data.nazOD);
+        values.put(tb_BillsStructure.nazOS, data.nazOS);
+        values.put(tb_BillsStructure.nazPD, data.nazPD);
+        values.put(tb_BillsStructure.description, data.description);
+        values.put(tb_BillsStructure.dateMiladi, data.dateMiladi);
+        values.put(tb_BillsStructure.dateJalali, data.dateJalali);
         long res = database.insert(tb_BillsStructure.tableName, null, values);
         Close();
 
@@ -75,20 +81,23 @@ public class tb_BillsDataSource {
     public long EditItems(tb_Bills data) {
         Open();
         ContentValues values = new ContentValues();
-        values.put(tb_BillsStructure.colPK_Bill, data.PK_Bill);
-        values.put(tb_BillsStructure.colfullName, data.fullName);
-        values.put(tb_BillsStructure.colphoneNum, data.phoneNum);
-        values.put(tb_BillsStructure.coldocName, data.docName);
-        values.put(tb_BillsStructure.colrightDoor, data.rightDoor);
-        values.put(tb_BillsStructure.colrightNazdik, data.rightNazdik);
-        values.put(tb_BillsStructure.colleftDoor, data.leftDoor);
-        values.put(tb_BillsStructure.colleftNazdik, data.leftNazdik);
-        values.put(tb_BillsStructure.coldescription, data.description);
-        values.put(tb_BillsStructure.coldateMiladi, data.dateMiladi);
-        values.put(tb_BillsStructure.coldateJalali, data.dateJalali);
+        values.put(tb_BillsStructure.PK_Bill, data.PK_Bill);
+        values.put(tb_BillsStructure.fullName, data.fullName);
+        values.put(tb_BillsStructure.phoneNum, data.phoneNum);
+        values.put(tb_BillsStructure.docName, data.docName);
+        values.put(tb_BillsStructure.dorOD, data.dorOD);
+        values.put(tb_BillsStructure.dorOS, data.dorOS);
+        values.put(tb_BillsStructure.dorPD, data.dorPD);
+        values.put(tb_BillsStructure.dorAdd, data.dorAdd);
+        values.put(tb_BillsStructure.nazOD, data.nazOD);
+        values.put(tb_BillsStructure.nazOS, data.nazOS);
+        values.put(tb_BillsStructure.nazPD, data.nazPD);
+        values.put(tb_BillsStructure.description, data.description);
+        values.put(tb_BillsStructure.dateMiladi, data.dateMiladi);
+        values.put(tb_BillsStructure.dateJalali, data.dateJalali);
         long res = database.update(tb_BillsStructure.tableName,
                 values,
-                tb_BillsStructure.colPK_Bill + "= '" + data.PK_Bill + "'",
+                tb_BillsStructure.PK_Bill + "= '" + data.PK_Bill + "'",
                 null);
         Close();
 
@@ -117,7 +126,7 @@ public class tb_BillsDataSource {
 
     public tb_Bills GetRecord(String id) {
         Cursor cursor = database.query(tb_BillsStructure.tableName, allColumns,
-                tb_BillsStructure.colPK_Bill + "= '" + id + "'",
+                tb_BillsStructure.PK_Bill + "= '" + id + "'",
                 null, null, null, null);
 
         cursor.moveToFirst();
@@ -137,7 +146,7 @@ public class tb_BillsDataSource {
     }
 
     public void DeleteById(String id) {
-        database.delete(tb_BillsStructure.tableName, tb_BillsStructure.colPK_Bill + " = " + id, null);
+        database.delete(tb_BillsStructure.tableName, tb_BillsStructure.PK_Bill + " = " + id, null);
     }
 
     public List<tb_Bills> GetList() {
@@ -146,7 +155,7 @@ public class tb_BillsDataSource {
         Cursor cursor = database.query(tb_BillsStructure.tableName,
                 allColumns,
                 null, null, null, null,
-                tb_BillsStructure.coldateMiladi + " DESC");
+                tb_BillsStructure.dateMiladi + " DESC");
         cursor.moveToFirst();
 
         while (!cursor.isAfterLast()) {
@@ -164,12 +173,12 @@ public class tb_BillsDataSource {
 
         Cursor cursor = database.query(tb_BillsStructure.tableName,
                 allColumns,
-                tb_BillsStructure.coldateMiladi + " BETWEEN '" + startDate + "' AND '" + endDate + "'", null, null, null,
-                tb_BillsStructure.coldateMiladi + " DESC");
+                tb_BillsStructure.dateMiladi + " BETWEEN '" + startDate + "' AND '" + endDate + "'", null, null, null,
+                tb_BillsStructure.dateMiladi + " DESC");
         cursor.moveToFirst();
 
 
-//        "select * from tb_Bills where dateMiladi between 'date' and 'date' AND colPk = pk AND name =  'سید' AND"
+//        "select * from tb_Bills where dateMiladi between 'date' and 'date' AND Pk = pk AND name =  'سید' AND"
 //        "Phone = '999'";
 
         while (!cursor.isAfterLast()) {
@@ -200,7 +209,7 @@ public class tb_BillsDataSource {
         Cursor cursor = database.query(tb_BillsStructure.tableName,
                 allColumns,
                 query, null, null, null,
-                tb_BillsStructure.coldateMiladi + " DESC");
+                tb_BillsStructure.dateMiladi + " DESC");
         cursor.moveToFirst();
 
         while (!cursor.isAfterLast()) {
@@ -229,10 +238,10 @@ public class tb_BillsDataSource {
 
 
                 ContentValues values = new ContentValues();
-                values.put(tb_BillsStructure.coldateMiladi, tool.getGregorianDate());
+                values.put(tb_BillsStructure.dateMiladi, tool.getGregorianDate());
                 database.update(tb_BillsStructure.tableName,
                         values,
-                        tb_BillsStructure.colPK_Bill + "= '" + list.get(i).PK_Bill + "'",
+                        tb_BillsStructure.PK_Bill + "= '" + list.get(i).PK_Bill + "'",
                         null);
             }
         }
@@ -248,13 +257,16 @@ public class tb_BillsDataSource {
         data.fullName = cursor.getString(1);
         data.phoneNum = cursor.getString(2);
         data.docName = cursor.getString(3);
-        data.rightDoor = cursor.getString(4);
-        data.rightNazdik = cursor.getString(5);
-        data.leftDoor = cursor.getString(6);
-        data.leftNazdik = cursor.getString(7);
-        data.description = cursor.getString(8);
-        data.dateMiladi = cursor.getString(9);
-        data.dateJalali = cursor.getString(10);
+        data.dorOD = cursor.getString(4);
+        data.dorOS = cursor.getString(5);
+        data.dorPD = cursor.getString(6);
+        data.dorAdd = cursor.getString(7);
+        data.nazOD = cursor.getString(8);
+        data.nazOS = cursor.getString(9);
+        data.nazPD = cursor.getString(10);
+        data.description = cursor.getString(11);
+        data.dateMiladi = cursor.getString(12);
+        data.dateJalali = cursor.getString(13);
 
         return data;
     }

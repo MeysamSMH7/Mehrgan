@@ -65,10 +65,10 @@ public class fr_Main extends Fragment {
         data = tb_billsDataSource.GetList();
         tb_billsDataSource.Close();
 
-        if (data.size() == 0){
+        if (data.size() == 0) {
             txtFrMain_NoData.setVisibility(View.VISIBLE);
             recyclFr_Main.setVisibility(View.GONE);
-        }else {
+        } else {
             txtFrMain_NoData.setVisibility(View.GONE);
             recyclFr_Main.setVisibility(View.VISIBLE);
             recyclerAdapter adapter = new recyclerAdapter(getContext(), data);
@@ -104,22 +104,25 @@ public class fr_Main extends Fragment {
 
     private void checkForRefresh() {
 
-
-        final SharedPreferences preferences = getContext().getSharedPreferences("Mehrgan", 0);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                boolean restoredText = preferences.getBoolean("onRefresh", false);
-                if (restoredText) {
-                    refreshFr_Main.setRefreshing(true);
-                    refreshData();
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putBoolean("onRefresh", false);
-                    editor.commit();
+        try {
+            final SharedPreferences preferences = getContext().getSharedPreferences("Mehrgan", 0);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    boolean restoredText = preferences.getBoolean("onRefresh", false);
+                    if (restoredText) {
+                        refreshFr_Main.setRefreshing(true);
+                        refreshData();
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putBoolean("onRefresh", false);
+                        editor.commit();
+                    }
+                    checkForRefresh();
                 }
-                checkForRefresh();
-            }
-        }, 1000);
+            }, 1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }

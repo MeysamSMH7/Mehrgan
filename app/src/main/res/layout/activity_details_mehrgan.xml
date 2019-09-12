@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutMain"
-    android:configChanges="keyboardHidden"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".Activity_Details_Mehrgan"
+    android:configChanges="keyboardHidden"
     android:layoutDirection="ltr"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Activity_Details_Mehrgan">
 
-    <include layout="@layout/appbar_mehrgan"/>
+    <include layout="@layout/appbar_mehrgan" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -46,6 +46,7 @@
                     android:gravity="left|center"
                     android:inputType="number"
                     android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -75,6 +76,7 @@
                     android:backgroundTint="@color/colorPurple7"
                     android:gravity="right"
                     android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -105,6 +107,7 @@
                     android:gravity="left|center"
                     android:inputType="number"
                     android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -135,6 +138,7 @@
                     android:gravity="right"
                     android:maxLines="2"
                     android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -208,25 +212,26 @@
                             android:layout_height="0dp"
                             android:layout_weight="0.5"
                             android:gravity="right|center"
-                            android:text="چشم راست"
+                            android:text="دید دور"
                             android:textColor="@color/colorLogo" />
 
 
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="نزدیک بین"
+                            android:gravity="left"
+                            android:hint="OD"
                             android:textColorHint="@color/colorPurple7"
                             app:backgroundTint="@color/colorPurple7">
 
                             <EditText
-                                android:id="@+id/edtAcDe_RightNazdik"
+                                android:id="@+id/edtAcDe_DorOD"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/colorPurple7"
-                                android:gravity="right"
-                                android:maxLines="2"
+                                android:gravity="left"
                                 android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
                                 android:textColor="@color/colorPurple7"
                                 android:textCursorDrawable="@color/colorPurple7"
                                 android:textSize="15sp" />
@@ -236,18 +241,63 @@
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="دوربین"
+                            android:gravity="left"
+                            android:hint="OS"
                             android:textColorHint="@color/colorPurple7"
                             app:backgroundTint="@color/colorPurple7">
 
                             <EditText
-                                android:id="@+id/edtAcDe_RightDor"
+                                android:id="@+id/edtAcDe_DorOS"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/colorPurple7"
-                                android:maxLines="2"
-                                android:gravity="right"
+                                android:gravity="left"
                                 android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
+                                android:textColor="@color/colorPurple7"
+                                android:textCursorDrawable="@color/colorPurple7"
+                                android:textSize="15sp" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:hint="PD"
+                            android:textColorHint="@color/colorPurple7"
+                            app:backgroundTint="@color/colorPurple7">
+
+                            <EditText
+                                android:id="@+id/edtAcDe_DorPD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/colorPurple7"
+                                android:gravity="left"
+                                android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
+                                android:textColor="@color/colorPurple7"
+                                android:textCursorDrawable="@color/colorPurple7"
+                                android:textSize="15sp" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:hint="Add"
+                            android:textColorHint="@color/colorPurple7"
+                            app:backgroundTint="@color/colorPurple7">
+
+                            <EditText
+                                android:id="@+id/edtAcDe_DorAdd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/colorPurple7"
+                                android:gravity="left"
+                                android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
                                 android:textColor="@color/colorPurple7"
                                 android:textCursorDrawable="@color/colorPurple7"
                                 android:textSize="15sp" />
@@ -255,7 +305,6 @@
                         </android.support.design.widget.TextInputLayout>
 
                     </LinearLayout>
-
 
                 </LinearLayout>
 
@@ -266,7 +315,6 @@
                     android:layout_margin="3dp"
                     android:orientation="horizontal"
                     android:padding="7dp">
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -279,24 +327,26 @@
                             android:layout_height="0dp"
                             android:layout_weight="0.5"
                             android:gravity="right|center"
-                            android:text="چشم چپ"
+                            android:text="نزدیک"
                             android:textColor="@color/colorLogo" />
 
+
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="نزدیک بین"
+                            android:gravity="left"
+                            android:hint="OD"
                             android:textColorHint="@color/colorPurple7"
                             app:backgroundTint="@color/colorPurple7">
 
                             <EditText
-                                android:id="@+id/edtAcDe_LeftNazdik"
+                                android:id="@+id/edtAcDe_NazOD"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/colorPurple7"
-                                android:maxLines="2"
-                                android:gravity="right"
+                                android:gravity="left"
                                 android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
                                 android:textColor="@color/colorPurple7"
                                 android:textCursorDrawable="@color/colorPurple7"
                                 android:textSize="15sp" />
@@ -306,24 +356,46 @@
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="دوربین"
+                            android:gravity="left"
+                            android:hint="OS"
                             android:textColorHint="@color/colorPurple7"
                             app:backgroundTint="@color/colorPurple7">
 
                             <EditText
-                                android:id="@+id/edtAcDe_LeftDoor"
+                                android:id="@+id/edtAcDe_NazOS"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/colorPurple7"
-                                android:maxLines="2"
+                                android:gravity="left"
                                 android:paddingEnd="7dp"
-                                android:gravity="right"
+                                android:paddingRight="7dp"
                                 android:textColor="@color/colorPurple7"
                                 android:textCursorDrawable="@color/colorPurple7"
                                 android:textSize="15sp" />
 
                         </android.support.design.widget.TextInputLayout>
 
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:hint="PD"
+                            android:textColorHint="@color/colorPurple7"
+                            app:backgroundTint="@color/colorPurple7">
+
+                            <EditText
+                                android:id="@+id/edtAcDe_NazPD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/colorPurple7"
+                                android:gravity="left"
+                                android:paddingEnd="7dp"
+                                android:paddingRight="7dp"
+                                android:textColor="@color/colorPurple7"
+                                android:textCursorDrawable="@color/colorPurple7"
+                                android:textSize="15sp" />
+
+                        </android.support.design.widget.TextInputLayout>
 
 
                     </LinearLayout>
@@ -358,6 +430,7 @@
                     android:gravity="right"
                     android:maxLines="2"
                     android:paddingEnd="7dp"
+                    android:paddingRight="7dp"
                     android:textColor="@color/colorPurple7"
                     android:textCursorDrawable="@color/colorPurple7"
                     android:textSize="15sp" />
@@ -369,8 +442,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:visibility="gone"
-                android:background="@drawable/selector_button_ds">
+                android:background="@drawable/selector_button_ds"
+                android:visibility="gone">
 
                 <Button
                     android:id="@+id/btnAcDe_Add"

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearMain"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="7dp"
     android:layout_marginTop="3dp"
     android:layout_marginRight="7dp"
-    android:layoutDirection="ltr"
-    android:id="@+id/linearMain"
     android:layout_marginBottom="3dp"
     android:background="@drawable/selector_button_ds"
     android:gravity="center"
+    android:layoutDirection="ltr"
     android:orientation="vertical"
     android:padding="7dp">
 
@@ -19,14 +19,16 @@
         android:layout_marginTop="3dp">
 
         <TextView
-            android:id="@+id/txtDate"
+            android:id="@+id/txtNameDate"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
-            android:gravity="left"
-            android:paddingLeft="7dp"
+            android:background="@color/colorComplite"
+            android:gravity="center"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="5dp"
             android:text="1398/9/9"
-            android:textColor="@color/colorLogo" />
+            android:textColor="@color/colorWhite" />
 
         <TextView
             android:id="@+id/txtBillNum"
@@ -46,15 +48,35 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtFullName"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:gravity="right"
-        android:paddingRight="7dp"
-        android:text="نام و نام خانوادگی"
-        android:textColor="@color/colorLogo" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:gravity="left"
+            android:text="1398/9/9"
+            android:textColor="@color/colorLogo" />
+
+        <TextView
+            android:id="@+id/txtFullName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:gravity="right"
+            android:paddingRight="7dp"
+            android:text="نام و نام خانوادگی"
+            android:textColor="@color/colorLogo" />
+
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/txtPhoneNum"
@@ -62,6 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
         android:gravity="left"
+        android:padding="4dp"
         android:paddingLeft="7dp"
         android:text="09999999999"
         android:textColor="@color/colorLogo" />

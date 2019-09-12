@@ -4,29 +4,35 @@ public class tb_BillsStructure {
 
     public static final String tableName = "tb_Bills";
 
-    public static final String colPK_Bill="PK_Bill";
-    public static final String colfullName = "fullName";
-    public static final String colphoneNum = "phoneNum";
-    public static final String coldocName = "docName";
-    public static final String colrightDoor = "rightDoor";
-    public static final String colrightNazdik = "rightNazdik";
-    public static final String colleftDoor = "leftDoor";
-    public static final String colleftNazdik = "leftNazdik";
-    public static final String coldescription = "description";
-    public static final String coldateMiladi = "dateMiladi";
-    public static final String coldateJalali = "dateJalali";
+    public static final String PK_Bill="PK_Bill";
+    public static final String fullName = "fullName";
+    public static final String phoneNum = "phoneNum";
+    public static final String docName = "docName";
+    public static final String dorOD = "dorOD";
+    public static final String dorOS = "dorOS";
+    public static final String dorPD = "dorPD";
+    public static final String dorAdd = "dorAdd";
+    public static final String nazOD = "nazOD";
+    public static final String nazOS = "nazOS";
+    public static final String nazPD = "nazPD";
+    public static final String description = "description";
+    public static final String dateMiladi = "dateMiladi";
+    public static final String dateJalali = "dateJalali";
 
     public static String createTableQuery = "create table " + tableName + "(" +
-            colPK_Bill + " text primary key , " +
-            colfullName + " text, " +
-            colphoneNum + " text, " +
-            coldocName + " text, " +
-            colrightDoor + " text, " +
-            colrightNazdik + " text, " +
-            colleftDoor + " text, " +
-            colleftNazdik + " text, " +
-            coldescription + " text, " +
-            coldateMiladi + " current_date, " +
-            coldateJalali + " current_date" +
+            PK_Bill + " text primary key , " +
+            fullName + " text, " +
+            phoneNum + " text, " +
+            docName + " text, " +
+            dorOD + " text, " +
+            dorOS + " text, " +
+            dorPD + " text, " +
+            dorAdd + " text, " +
+            nazOD + " text, " +
+            nazOS + " text, " +
+            nazPD + " text, " +
+            description + " text, " +
+            dateMiladi + " current_date, " +
+            dateJalali + " current_date" +
             ")";
 }
